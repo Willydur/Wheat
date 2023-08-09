@@ -33,17 +33,17 @@ class Tige:
             if dy > 0:
                 Γ = np.pi/2
             if dy < 0:
-                Δθ = np.pi
-                Γ = np.pi/2 + Δθ
+                delta0 = np.pi
+                Γ = np.pi/2 + delta0
         if dx > 0:
             # angle dans le triangle formé par la base et le ptgravi
             a = np.arctan(dy/dx)
-            Δθ = np.pi/2 - a  # caclul de l'angle a ajouter pour s'aligner avec le ptgravi
-            Γ = np.pi/2 - Δθ  # angle sur le cercle de rayon l centré sur la base
+            delta0 = np.pi/2 - a  # caclul de l'angle a ajouter pour s'aligner avec le ptgravi
+            Γ = np.pi/2 - delta0  # angle sur le cercle de rayon l centré sur la base
         if dx < 0:
             a = np.arctan(dy/dx)
-            Δθ = np.pi/2 + a
-            Γ = np.pi/2 + Δθ
+            delta0 = np.pi/2 + a
+            Γ = np.pi/2 + delta0
         xm = l*np.cos(Γ)
         ym = l*np.sin(Γ)
         return (x1+xm, y1+ym)
